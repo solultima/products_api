@@ -6,7 +6,8 @@ GET http://localhost:5000/products
 
 ###
 
-GET http://localhost:5000/products/2
+GET http://localhost:5000/products/f785000a-a768-4ce3-b549-d67b47784f33
+
 
 ###
 
