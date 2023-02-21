@@ -10,4 +10,29 @@ GET http://localhost:5000/products/2
 
 ###
 
-POST http://localhost:5000/products
+POST http://localhost:5000/products?action=update-stock
+content-type: application/json
+x-api-key: sdasdasdfasdasdasd
+
+{
+    "name": "product 3",
+    "stock": 34,
+    "price": 23
+}
+
+###
+PUT http://localhost:5000/products/be23bf84-d48c-45d9-9fae-a74227981fc6?action=stock
+content-type: application/json
+
+{
+    "stock": 33
+}
+
+
+###
+PUT http://localhost:5000/products/be23bf84-d48c-45d9-9fae-a74227981fc6?action=price
+content-type: application/json
+
+{
+    "price": 33.32
+}
