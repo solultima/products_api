@@ -16,4 +16,7 @@ content-type: application/json
     "stock": 20
 }
 
+###
+
+POST http://localhost:5000/products
 

@@ -18,3 +18,4 @@ app.use('/**', (req, res) => {
 app.listen(PORT, () => {
     console.log(`Products APIs are running on port ${PORT}`);
 });
+
