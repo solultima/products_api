@@ -1,14 +1,27 @@
 import { Request, Response } from 'express';
+import { getProductByID } from './database';
 
-const getList = (req: Request, res: Response) => {
+import { validate } from 'uuid';
+
+const getListHandler = (req: Request, res: Response) => {
     res.send([]);
 }
 
-const getProductByID = (req: Request, res: Response) => {
-    res.send({ id: req.params.id });
+const getProductByIDHandler = (req: Request, res: Response) => {
+    const id = req.params.id;
+    if (id && validate(id)) {
+        const product = getProductByID(id);
+        if (product) {
+            res.send(product);
+        } else {
+            res.status(404).send({ error: 'not able to find the product with the provided id' });
+        }
+    } else {
+        res.status(400).send({ error: 'invalid product id is provided' });
+    }
 }
 
 export {
-    getList,
-    getProductByID
+    getListHandler,
+    getProductByIDHandler
 }

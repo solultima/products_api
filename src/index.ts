@@ -1,15 +1,18 @@
+import bodyParser from 'body-parser';
 import express from 'express';
-import { Request, Response } from 'express';
-import { getList, createProduct, getProductByID } from './products';
+import { getListHandler, createProduct, getProductByIDHandler, updateStockHandler } from './products';
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.get('/products', getList);
-app.get('/products/:id', getProductByID);
+app.use(bodyParser.json());
+app.get('/products', getListHandler);
+app.get('/products/:id', getProductByIDHandler);
 app.post('/products', createProduct);
+app.put('/products/:id/stock', updateStockHandler);
+
 app.use('/**', (req, res) => {
-    res.status(404).send({error: 'resource not found'});
+    res.status(404).send({ error: 'resource not found' });
 })
 
 app.listen(PORT, () => {
