@@ -1,6 +1,5 @@
 import bodyParser from 'body-parser';
 import express from 'express';
-
 import { getListHandler, createProduct, getProductByIDHandler, updateStockHandler } from './products';
 
 const app = express();
