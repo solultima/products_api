@@ -1,7 +1,6 @@
 import { v4 } from 'uuid';
 import { productModel } from './product.model';
 import * as fs from 'fs';
-// import * as path from 'path';
 
 const dataFileName = './database/products.json';
 
@@ -14,13 +13,17 @@ const loadData = (): Array<productModel> => {
     }
 }
 
+let products: Array<productModel> = loadData();
+
 const saveData = (data: Array<productModel>): Array<productModel> => {
     const dataFile = dataFileName;
     fs.writeFileSync(dataFile, JSON.stringify(data, null, 2));
     return loadData();
 }
 
-let products: Array<productModel> = loadData();
+export const getProductByID = (id: string) => {
+    return products.find((product) => product.id === id);
+}
 
 export const createItem = (name: string, price: number, stock: number) => {
     let newID = v4();
@@ -35,3 +38,18 @@ export const createItem = (name: string, price: number, stock: number) => {
     saveData(products);
     return newID;
 }
+
+export const updateStock = (id: string, stock: number) => {
+    const product = getProductByID(id);
+    if (product) {
+        product.stock = stock;
+        if (saveData(products)) {
+            return product;
+        } else {
+            return null;
+        }
+    } else {
+        return null;
+    }
+}
+
