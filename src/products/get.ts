@@ -1,8 +1,10 @@
 import { Request, Response } from 'express';
 import { getProductByID } from './database';
+import { validate } from 'uuid';
+import { getProducts } from './database';
 
 const getListHandler = (req: Request, res: Response) => {
-    res.send({products});
+    res.send(getProducts());
 }
 
 const getProductByIDHandler = (req: Request, res: Response) => {
