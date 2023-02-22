@@ -1,6 +1,6 @@
 import bodyParser from 'body-parser';
 import express from 'express';
-import { getListHandler, createProduct, getProductByIDHandler, updateStockHandler } from './products';
+import { getListHandler, createProduct, getProductByIDHandler, updateStockHandler, deleteProductHandler } from './products';
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -10,7 +10,7 @@ app.get('/products', getListHandler);
 app.get('/products/:id', getProductByIDHandler);
 app.post('/products', createProduct);
 app.put('/products/:id/stock', updateStockHandler);
-
+app.delete('/products/:id',deleteProductHandler)
 app.use('/**', (req, res) => {
     res.status(404).send({ error: 'resource not found' });
 })
@@ -18,3 +18,4 @@ app.use('/**', (req, res) => {
 app.listen(PORT, () => {
     console.log(`Products APIs are running on port ${PORT}`);
 });
+

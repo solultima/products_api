@@ -6,14 +6,20 @@ GET http://localhost:5000/products
 
 ###
 
-GET http://localhost:5000/products/d38971d6-0468-4bc7-9f07-01ead4fb96ef
+GET http://localhost:5000/products/9a68eebe-c8ff-4567-8569-b19c466eb629
 
 ###
-PUT http://localhost:5000/products/d38971d6-0468-4bc7-9f07-01ead4fb96ef/stock
+PUT http://localhost:5000/products/9a68eebe-c8ff-4567-8569-b19c466eb629/stock
 content-type: application/json
 
 {
-    "stock": 20
+    "stock": 100
 }
 
+###
+
+POST http://localhost:5000/products
+
+###
+DELETE http://localhost:5000/products/6ae3c4a6-309f-464b-9a54-b0044f287120
 
