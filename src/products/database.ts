@@ -4,6 +4,11 @@ import * as fs from 'fs';
 
 const dataFileName = './database/products.json';
 
+
+export const findOneOfID = (id: String): productModel => {
+    const toBeFound: productModel = products.find(t => t.id === id)!;
+    return toBeFound;
+  }
 const loadData = (): Array<productModel> => {
     const dataFile = dataFileName;
     if (fs.existsSync(dataFile)) {
