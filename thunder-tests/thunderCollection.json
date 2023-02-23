@@ -1,0 +1,22 @@
+[
+  {
+    "_id": "e5f8b33a-a726-4e91-b7ee-2ddb7f82f7b5",
+    "colName": "Products API",
+    "created": "2023-02-22T11:00:27.021Z",
+    "sortNum": 10000,
+    "folders": [
+      {
+        "_id": "9d29294a-ce68-4b0f-9311-d43150bafe35",
+        "name": "Products",
+        "containerId": "",
+        "created": "2023-02-22T11:16:13.347Z",
+        "sortNum": 10000
+      }
+    ],
+    "settings": {
+      "headers": [],
+      "tests": [],
+      "envId": "4600d2cf-4a83-4511-87f1-07a8dd836445"
+    }
+  }
+]

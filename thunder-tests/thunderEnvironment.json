@@ -1,0 +1,16 @@
+[
+  {
+    "_id": "4600d2cf-4a83-4511-87f1-07a8dd836445",
+    "name": "Product APIs",
+    "default": true,
+    "sortNum": 10000,
+    "created": "2023-02-22T11:12:17.912Z",
+    "modified": "2023-02-22T11:12:17.912Z",
+    "data": [
+      {
+        "name": "productID",
+        "value": "18fd8cdf-f828-4b38-8220-ab5c6436a295"
+      }
+    ]
+  }
+]

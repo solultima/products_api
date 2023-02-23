@@ -67,6 +67,20 @@ export const updateStock = (id: string, stock: number) => {
     }
 }
 
+export const updatePrice = (id: string, price: number) => {
+    const product = getProductByID(id);
+    if (product) {
+        product.price = price;
+        if (saveData(products)) {
+            return product;
+        } else {
+            return null;
+        }
+    } else {
+        return null;
+    }
+}
+
 export const deleteProduct = (id: string) => {
     const index = getProductIndexByID(id);
     if (index >= 0) {

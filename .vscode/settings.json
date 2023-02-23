@@ -1,5 +1,13 @@
 {
     "files.exclude": {
         "**/.vscode": true
-    }
+    },
+    "thunder-client.saveToWorkspace": true,
+    "thunder-client.autoRunCurl": false,
+    "thunder-client.requestLayout": "Top/Bottom",
+    "thunder-client.saveRequestOnSend": false,
+    "mdb.connectionSaving.defaultConnectionSavingLocation": "Workspace",
+    "mdb.sendTelemetry": false,
+    "mdb.useDefaultTemplateForPlayground": true,
+    "mongodbLanguageServer.trace.server": {}
 }
