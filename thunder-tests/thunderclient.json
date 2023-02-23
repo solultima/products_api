@@ -18,11 +18,11 @@
     "colId": "e5f8b33a-a726-4e91-b7ee-2ddb7f82f7b5",
     "containerId": "9d29294a-ce68-4b0f-9311-d43150bafe35",
     "name": "Get Product By ID",
-    "url": "http://localhost/products/{{productID}}",
+    "url": "http://localhost/products/dc82d13d-d1d2-4765-a21c-c415e2cf3253",
     "method": "GET",
     "sortNum": 20000,
     "created": "2023-02-22T11:11:19.488Z",
-    "modified": "2023-02-22T11:16:19.937Z",
+    "modified": "2023-02-23T05:27:48.836Z",
     "headers": [],
     "params": [],
     "tests": []
@@ -78,5 +78,17 @@
     "headers": [],
     "params": [],
     "tests": []
+  },
+  {
+    "_id": "df75aec6-e526-4640-b2c0-2a25e1f56f57",
+    "colId": "e5f8b33a-a726-4e91-b7ee-2ddb7f82f7b5",
+    "containerId": "9d29294a-ce68-4b0f-9311-d43150bafe35",
+    "name": "Create Product",
+    "url": "",
+    "method": "GET",
+    "sortNum": 40000,
+    "created": "2023-02-23T05:26:32.954Z",
+    "modified": "2023-02-23T05:26:32.954Z",
+    "headers": []
   }
 ]
