@@ -1,0 +1,101 @@
+[
+  {
+    "_id": "c4cc059b-e2ea-4a73-b86d-e5c01ea66a87",
+    "colId": "e5f8b33a-a726-4e91-b7ee-2ddb7f82f7b5",
+    "containerId": "9d29294a-ce68-4b0f-9311-d43150bafe35",
+    "name": "Get Products",
+    "url": "http://localhost/products",
+    "method": "GET",
+    "sortNum": 10000,
+    "created": "2023-02-22T11:00:55.070Z",
+    "modified": "2023-02-22T11:16:16.762Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "327d9571-7072-4233-9bdd-d7bcbe9d8e26",
+    "colId": "e5f8b33a-a726-4e91-b7ee-2ddb7f82f7b5",
+    "containerId": "9d29294a-ce68-4b0f-9311-d43150bafe35",
+    "name": "Get Product By ID",
+    "url": "http://localhost/products/dc82d13d-d1d2-4765-a21c-c415e2cf3253",
+    "method": "GET",
+    "sortNum": 20000,
+    "created": "2023-02-22T11:11:19.488Z",
+    "modified": "2023-02-23T05:27:48.836Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "c32cf00e-c924-4ffe-9f48-c1e85866ff76",
+    "colId": "e5f8b33a-a726-4e91-b7ee-2ddb7f82f7b5",
+    "containerId": "9d29294a-ce68-4b0f-9311-d43150bafe35",
+    "name": "Update Stock",
+    "url": "http://localhost/products/cbb8a432-3a2a-49b1-930e-b659fda06c09/stock",
+    "method": "PUT",
+    "sortNum": 30000,
+    "created": "2023-02-23T05:08:21.586Z",
+    "modified": "2023-02-23T05:54:46.140Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"stock\": \"21\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "661831b6-8117-44a4-a382-d3b704297adf",
+    "colId": "e5f8b33a-a726-4e91-b7ee-2ddb7f82f7b5",
+    "containerId": "9d29294a-ce68-4b0f-9311-d43150bafe35",
+    "name": "Update Price",
+    "url": "http://localhost/products/18fd8cdf-f828-4b38-8220-ab5c6436a295/price",
+    "method": "PUT",
+    "sortNum": 40000,
+    "created": "2023-02-23T05:09:24.453Z",
+    "modified": "2023-02-23T05:09:45.539Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"price\": 22\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "1d04851b-5bfd-4ba8-bd49-95a605e8adf4",
+    "colId": "e5f8b33a-a726-4e91-b7ee-2ddb7f82f7b5",
+    "containerId": "9d29294a-ce68-4b0f-9311-d43150bafe35",
+    "name": "Delete Product",
+    "url": "http://localhost/products/18fd8cdf-f828-4b38-8220-ab5c6436a295",
+    "method": "DELETE",
+    "sortNum": 50000,
+    "created": "2023-02-23T05:09:59.448Z",
+    "modified": "2023-02-23T05:11:19.547Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "df75aec6-e526-4640-b2c0-2a25e1f56f57",
+    "colId": "e5f8b33a-a726-4e91-b7ee-2ddb7f82f7b5",
+    "containerId": "9d29294a-ce68-4b0f-9311-d43150bafe35",
+    "name": "Create Product",
+    "url": "http://localhost/products",
+    "method": "POST",
+    "sortNum": 40000,
+    "created": "2023-02-23T05:26:32.954Z",
+    "modified": "2023-02-23T05:42:54.114Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"name\": \"pen\",\n  \"price\": 10,\n  \"stock\": 100\n}",
+      "form": []
+    },
+    "tests": []
+  }
+]
