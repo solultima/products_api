@@ -32,16 +32,16 @@
     "colId": "e5f8b33a-a726-4e91-b7ee-2ddb7f82f7b5",
     "containerId": "9d29294a-ce68-4b0f-9311-d43150bafe35",
     "name": "Update Stock",
-    "url": "http://localhost/products/18fd8cdf-f828-4b38-8220-ab5c6436a295/stock",
+    "url": "http://localhost/products/cbb8a432-3a2a-49b1-930e-b659fda06c09/stock",
     "method": "PUT",
     "sortNum": 30000,
     "created": "2023-02-23T05:08:21.586Z",
-    "modified": "2023-02-23T05:09:16.540Z",
+    "modified": "2023-02-23T05:54:46.140Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"stock\": 22\n}",
+      "raw": "{\n  \"stock\": \"21\"\n}",
       "form": []
     },
     "tests": []
@@ -84,11 +84,18 @@
     "colId": "e5f8b33a-a726-4e91-b7ee-2ddb7f82f7b5",
     "containerId": "9d29294a-ce68-4b0f-9311-d43150bafe35",
     "name": "Create Product",
-    "url": "",
-    "method": "GET",
+    "url": "http://localhost/products",
+    "method": "POST",
     "sortNum": 40000,
     "created": "2023-02-23T05:26:32.954Z",
-    "modified": "2023-02-23T05:26:32.954Z",
-    "headers": []
+    "modified": "2023-02-23T05:42:54.114Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"name\": \"pen\",\n  \"price\": 10,\n  \"stock\": 100\n}",
+      "form": []
+    },
+    "tests": []
   }
 ]
