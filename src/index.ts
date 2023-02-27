@@ -4,7 +4,7 @@ import { getListHandler, createProduct, getProductByIDHandler, updateStockHandle
 
 const app = express();
 const PORT = process.env.PORT || 5000;
-const validator = () => [[updateStockValidator, updateStockValidator]];
+const validator = () => [updateStockValidator, updateStockValidator];
 app.use(bodyParser.json());
 
 app.route('/products')

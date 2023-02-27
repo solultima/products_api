@@ -14,7 +14,6 @@
     "excludeDirectories": ["**/node_modules"]
   },
   "compilerOptions": {
-    "watch": true,
     /* Visit https://aka.ms/tsconfig to read more about this file */
 
     /* Projects */

@@ -9,5 +9,7 @@
     "mdb.connectionSaving.defaultConnectionSavingLocation": "Workspace",
     "mdb.sendTelemetry": false,
     "mdb.useDefaultTemplateForPlayground": true,
-    "mongodbLanguageServer.trace.server": {}
+    "mongodbLanguageServer.trace.server": {},
+    "editor.fontLigatures": true,
+    "editor.fontFamily": "'Cascadia Code', 'Cascadia Mono'"
 }

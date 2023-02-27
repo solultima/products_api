@@ -1,18 +1,34 @@
 name: demo_apis
 services:
+  database:
+    container_name: products_api_data
+    image: mongo:latest
+    restart: unless-stopped
+    volumes:
+      - "$PWD/database/data/db:/data/db"
+    ports:
+      - 27017:27017
+    networks:
+      default:
+        ipv4_address: 172.18.0.2
+
   products_api:
     container_name: products_api
-    image: node:18
+    image: node:lts-alpine
+    restart: unless-stopped
+    depends_on:
+      - database
     volumes:
       - "$PWD:/app"
-    command: ["node", "/app/dist/index.js"]
+    working_dir: "/app"
+    command: ["npm", "run", "dev"]
     ports:
       - 80:8080
     environment:
       - PORT=8080
     networks:
       default:
-        ipv4_address: 172.18.0.2
+        ipv4_address: 172.18.0.3
 
 networks:
   default:
