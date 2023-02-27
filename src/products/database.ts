@@ -3,6 +3,8 @@ import { ProductModel, Products } from './product.model';
 import * as fs from 'fs';
 import { getClient } from './mongo';
 import { getConnection } from './mongoose';
+import { url } from 'inspector';
+import mongoose from 'mongoose';
 
 const dataFileName = './database/products.json';
 
@@ -102,10 +104,10 @@ export const getProductsFromDB = async () => {
     return getClient()
         .then(async (client) => {
             const data = await client.db('products_api_data').collection('products')
-            .find<ProductModel>({}, {
-                limit: 5,
-                skip: 0
-            }).toArray();
+                .find<ProductModel>({}, {
+                    limit: 5,
+                    skip: 0
+                }).toArray();
             return data;
         });
 }
