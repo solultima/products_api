@@ -85,16 +85,16 @@ export const updatePrice = (id: string, price: number) => {
     }
 }
 
-export const deleteProduct = (id: string) => {
-    const index = getProductIndexByID(id);
-    if (index >= 0) {
-        const isDeleted = products.splice(index, 1).length > 0
-        saveData(products);
-        return isDeleted;
-    } else {
-        return null
-    }
-}
+// export const deleteProduct = (id: string) => {
+//     const index = getProductIndexByID(id);
+//     if (index >= 0) {
+//         const isDeleted = products.splice(index, 1).length > 0
+//         saveData(products);
+//         return isDeleted;
+//     } else {
+//         return null
+//     }
+// }
 
 export const getProducts = () => {
     return products;
@@ -126,5 +126,11 @@ export const getProductByIdUsingMongoose = async (id: any) => {
     .then(async () => {
         const product_id = await Products.findById(id);
         return product_id;
+    })
+}
+export const deleteProduct = async (id: any) => {
+    return getConnection()
+    .then(async () => {
+        const deletedData = await Products.findByIdAndDelete(id);
     })
 }
