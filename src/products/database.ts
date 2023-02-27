@@ -28,6 +28,10 @@ const saveData = (data: Array<ProductModel>): Array<ProductModel> => {
     return loadData();
 }
 
+export const getProductByID = (id: string) => {
+    return products.find((product) => product.id === id);
+}
+
 const getProductIndexByID = (id: string) => {
     const product = getProductByID(id);
     if (product) {
@@ -35,10 +39,6 @@ const getProductIndexByID = (id: string) => {
     } else {
         return -1
     }
-}
-
-export const getProductByID = (id: string) => {
-    return products.find((product) => product.id === id);
 }
 
 export const createItem = (name: string, price: number, stock: number) => {
@@ -113,8 +113,16 @@ export const getProductsFromDB = async () => {
 export const getProductsUsingMongoose = async () => {
     return getConnection()
         .then(async () => {
-            const data = await Products.find<ProductModel>({}, {'name':true}, { limit: 5, skip: 0 });
+            const data = await Products.find<ProductModel>({}, {}, { limit: 5, skip: 0 });
             console.log(data);
             return data;
         });
+}
+
+export const getProductByIdUsingMongoose = async (id: any) => {
+    return getConnection()
+    .then(async () => {
+        const product_id = await Products.findById(id);
+        return product_id;
+    })
 }
