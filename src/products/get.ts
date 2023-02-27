@@ -1,10 +1,15 @@
 import { Request, Response } from 'express';
-import { getProductByID } from './database';
+import { getProductByID, getProductsFromDB, getProductsUsingMongoose } from './database';
 import { validate } from 'uuid';
 import { getProducts } from './database';
 
-const getListHandler = (req: Request, res: Response) => {
-    res.send(getProducts());
+const getListHandler = async (req: Request, res: Response) => {
+    // const data = {
+    //     ResponseData: await getProductsFromDB()
+    //     // ResponseData: await getProductsUsingMongoose(),
+    // }
+    // res.setHeader('cache-control', 'public, max-age=30').send(data);
+    res.send(await getProductsUsingMongoose());
 }
 
 const getProductByIDHandler = (req: Request, res: Response) => {

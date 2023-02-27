@@ -16,7 +16,9 @@
     "settings": {
       "headers": [],
       "tests": [],
-      "envId": "4600d2cf-4a83-4511-87f1-07a8dd836445"
+      "options": {
+        "baseUrl": "http://localhost"
+      }
     }
   }
 ]

@@ -1,5 +1,5 @@
 ### root ping
-GET http://localhost:5000
+GET http://localhost
 
 ### get list
 GET http://localhost:5000/products
