@@ -5,10 +5,10 @@ GET http://localhost
 GET http://localhost:5000/products
 
 ### get product by id
-GET http://localhost:5000/products/9a68eebe-c8ff-4567-8569-b19c466eb629
+GET http://localhost:5000/products/a6f70305-88af-4c5e-bad1-ab5ea7fc974b
 
 ### update product stock
-PUT http://localhost:5000/products/18fd8cdf-f828-4b38-8220-ab5c6436a295/stock
+PUT http://localhost:5000/products/a6f70305-88af-4c5e-bad1-ab5ea7fc974b/stock
 content-type: application/json
 
 {
@@ -16,7 +16,7 @@ content-type: application/json
 }
 
 ### update product price
-PUT http://localhost:5000/products/18fd8cdf-f828-4b38-8220-ab5c6436a295/price
+PUT http://localhost:5000/products/a6f70305-88af-4c5e-bad1-ab5ea7fc974b/price
 content-type: application/json
 
 {
@@ -25,6 +25,14 @@ content-type: application/json
 
 ### create product
 POST http://localhost:5000/products
+content-type: application/json
+
+{
+    "name": "product3",
+    "price": 14,
+    "stock": 21
+}
+
 
 ### delete product
-DELETE http://localhost:5000/products/6ae3c4a6-309f-464b-9a54-b0044f287120
+DELETE http://localhost:5000/products/a6f70305-88af-4c5e-bad1-ab5ea7fc974b
