@@ -3,6 +3,8 @@ import { inspect } from 'util';
 
 const url = 'mongodb://products_api_data:27017';
 
+mongoose.set("strictQuery", true);
+
 export const getConnection = async () => {
     return await mongoose.connect(url, { 
         appName: 'Products API',
