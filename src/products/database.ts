@@ -3,6 +3,8 @@ import { ProductModel, Products } from './product.model';
 import * as fs from 'fs';
 import { getClient } from './mongo';
 import { getConnection } from './mongoose';
+import { Request, Response } from 'express';
+//import { sendToThunder } from 'thunder-client';
 
 const dataFileName = './database/products.json';
 
@@ -55,7 +57,7 @@ export const createItem = (name: string, price: number, stock: number) => {
     return newID;
 }
 
-export const updateStock = (id: string, stock: number) => {
+/*export const updateStock = (id: string, stock: number) => {
     const product = getProductByID(id);
     if (product) {
         product.stock = stock;
@@ -67,7 +69,50 @@ export const updateStock = (id: string, stock: number) => {
     } else {
         return null;
     }
-}
+}*/
+
+/*export const updateStock = (id: string, stock: number, updateStockHandler: (id: string, stock: number) => void) => {
+    const product = getProductByID(id);
+    if (product) {
+        product.stock = stock;
+        if (saveData(products)) {
+            // Call the stock handler with the updated stock value
+            updateStockHandler(id, stock);
+            return product;
+        } else {
+            return null;
+        }
+    } else {
+        return null;
+    }
+}*/
+
+import { ObjectId, Collection, } from 'mongodb';
+
+/*export const updateStock = async (id: string, stock: number, collection: Collection) => {
+  try {
+    const regexId = new RegExp(`^${id}$`, 'i');
+    const product = await collection.findOne({ _id: { $regex: regexId } });
+    
+    if (product) {
+      product.stock = stock;
+      const result = await collection.replaceOne({ _id: product._id }, product);
+      
+      if (result.modifiedCount === 1) {
+        return product;
+      } else {
+        return null;
+      }
+    } else {
+      return null;
+    }
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
+};*/
+
+
 
 export const updatePrice = (id: string, price: number) => {
     const product = getProductByID(id);
@@ -102,10 +147,10 @@ export const getProductsFromDB = async () => {
     return getClient()
         .then(async (client) => {
             const data = await client.db('products_api_data').collection('products')
-            .find<ProductModel>({}, {
-                limit: 5,
-                skip: 0
-            }).toArray();
+                .find<ProductModel>({}, {
+                    limit: 5,
+                    skip: 0
+                }).toArray();
             return data;
         });
 }
@@ -113,8 +158,28 @@ export const getProductsFromDB = async () => {
 export const getProductsUsingMongoose = async () => {
     return getConnection()
         .then(async () => {
-            const data = await Products.find<ProductModel>({}, {'name':true}, { limit: 5, skip: 0 });
+            const data = await Products.find<ProductModel>({}, {}, { limit: 5, skip: 0 });
             console.log(data);
             return data;
         });
 }
+
+export const updateStockUsingMongoose = async (id: string, stock: number) => {
+    return getConnection()
+        .then(async () => {
+            const isUpdatedStock = await Products.findByIdAndUpdate({ _id: id }, { stock: stock }, { new: true });
+
+            return isUpdatedStock;
+        })
+
+    }
+
+    export const updatePriceUsingMongoose = async (id: string, price: number) => {
+        return getConnection()
+            .then(async () => {
+                const isUpdatedPrice = await Products.findByIdAndUpdate({ _id: id }, { price: price }, { new: true });
+
+                return isUpdatedPrice;
+            })
+        }
+

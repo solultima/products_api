@@ -14,7 +14,7 @@ app.route('/products/:id')
     .get(getProductByIDHandler)
     .delete(deleteProductHandler)
 
-app.put('/products/:id/stock', validator(), updateStockHandler);
+app.put('/products/:id/stock',validator(), updateStockHandler);
 app.put('/products/:id/price', updatePriceHandler);
 
 app.use('/**', (req, res) => {
