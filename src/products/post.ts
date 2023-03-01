@@ -22,6 +22,7 @@ const createProduct = async (req: Request, res: Response) => {
     const price = req.body.price;
     const stock = req.body.stock;
     try {
+        
         const data = await createItem(name, price, stock);
         res.send("Product created succesfully");
         } 
