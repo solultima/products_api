@@ -8,8 +8,22 @@
     "modified": "2023-02-22T11:12:17.912Z",
     "data": [
       {
-        "name": "productID",
-        "value": "18fd8cdf-f828-4b38-8220-ab5c6436a295"
+        "name": "baseURL",
+        "value": "https://products-api.localhost.com"
+      }
+    ]
+  },
+  {
+    "_id": "b4961032-3da6-4184-a0b4-1295208db6db",
+    "name": "Product APIs - Local",
+    "default": false,
+    "sortNum": 20000,
+    "created": "2023-03-05T07:13:31.129Z",
+    "modified": "2023-03-05T07:13:31.129Z",
+    "data": [
+      {
+        "name": "baseURL",
+        "value": "http://localhost:5000"
       }
     ]
   }

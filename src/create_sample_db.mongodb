@@ -8,14 +8,14 @@ db.products.drop();
 
 // Insert a few documents into the sales collection.
 db.products.insertMany([
-  { 'name': 'product 1', 'price': 10, 'stock': 2 },
-  { 'name': 'product 2', 'price': 20, 'stock': 1 },
-  { 'name': 'product 3', 'price': 5, 'stock': 10 },
-  { 'name': 'product 4', 'price': 5, 'stock':  20 },
-  { 'name': 'product 5', 'price': 10, 'stock': 10 },
-  { 'name': 'product 6', 'price': 7.5, 'stock': 5 },
-  { 'name': 'product 7', 'price': 7.5, 'stock': 10 },
-  { 'name': 'product 8', 'price': 10, 'stock': 5 },
+  { _id: 'c5baa5b1-7f9d-46e7-8ace-044d30720c02', 'name': 'product 1', 'price': 10, 'stock': 2 },
+  { _id: '459e2a9b-8507-425d-be17-3ea9a302c84e', 'name': 'product 2', 'price': 20, 'stock': 1 },
+  { _id: '75cf67a1-aace-44aa-86c3-9d0d0eaf0e74', 'name': 'product 3', 'price': 5, 'stock': 10 },
+  { _id: 'a64543f0-e3c8-4e4a-bc7b-a928fe85da80', 'name': 'product 4', 'price': 5, 'stock':  20 },
+  { _id: 'a7afc959-6ab9-4bd1-8075-478689d4a47d', 'name': 'product 5', 'price': 10, 'stock': 10 },
+  { _id: 'b0decc59-5a54-4c11-ae07-a887b118d159', 'name': 'product 6', 'price': 7.5, 'stock': 5 },
+  { _id: '7b84b9d2-eefc-4189-80e3-79eebf78ee2b', 'name': 'product 7', 'price': 7.5, 'stock': 10 },
+  { _id: 'e24c20a6-14c5-429b-b841-b29ba6d66efc', 'name': 'product 8', 'price': 10, 'stock': 5 },
 ]);
 
 // Run a find command to view items sold on April 4th, 2014.

@@ -11,5 +11,9 @@
     "mdb.useDefaultTemplateForPlayground": true,
     "mongodbLanguageServer.trace.server": {},
     "editor.fontLigatures": true,
-    "editor.fontFamily": "'Cascadia Code', 'Cascadia Mono'"
+    "editor.tabSize": 2,
+    "editor.tabCompletion": "on",
+    "thunder-client.sidebar.defaultTab": "Collections",
+    "prettier.singleQuote": true,
+    "prettier.tabWidth": 2,
 }

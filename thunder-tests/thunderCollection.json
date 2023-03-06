@@ -15,10 +15,7 @@
     ],
     "settings": {
       "headers": [],
-      "tests": [],
-      "options": {
-        "baseUrl": "http://localhost"
-      }
+      "tests": []
     }
   }
 ]

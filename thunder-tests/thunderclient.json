@@ -4,13 +4,24 @@
     "colId": "e5f8b33a-a726-4e91-b7ee-2ddb7f82f7b5",
     "containerId": "9d29294a-ce68-4b0f-9311-d43150bafe35",
     "name": "Get Products",
-    "url": "/products",
+    "url": "{{baseURL}}/products?page=3&size=2",
     "method": "GET",
     "sortNum": 10000,
     "created": "2023-02-22T11:00:55.070Z",
-    "modified": "2023-02-24T14:15:51.731Z",
+    "modified": "2023-03-05T16:11:04.416Z",
     "headers": [],
-    "params": [],
+    "params": [
+      {
+        "name": "page",
+        "value": "3",
+        "isPath": false
+      },
+      {
+        "name": "size",
+        "value": "2",
+        "isPath": false
+      }
+    ],
     "tests": []
   },
   {
@@ -18,11 +29,11 @@
     "colId": "e5f8b33a-a726-4e91-b7ee-2ddb7f82f7b5",
     "containerId": "9d29294a-ce68-4b0f-9311-d43150bafe35",
     "name": "Get Product By ID",
-    "url": "/products/3f544586-70d9-4b2f-ad61-ca520e798a13",
+    "url": "{{baseURL}}/products/2354211f-2536-4464-80a5-c1a39cedd382",
     "method": "GET",
     "sortNum": 20000,
     "created": "2023-02-22T11:11:19.488Z",
-    "modified": "2023-02-24T14:29:07.864Z",
+    "modified": "2023-03-05T16:14:17.509Z",
     "headers": [],
     "params": [],
     "tests": []
@@ -32,16 +43,16 @@
     "colId": "e5f8b33a-a726-4e91-b7ee-2ddb7f82f7b5",
     "containerId": "9d29294a-ce68-4b0f-9311-d43150bafe35",
     "name": "Update Stock",
-    "url": "/products/cbb8a432-3a2a-49b1-930e-b659fda06c09/stock",
+    "url": "{{baseURL}}/products/fc181183-8a78-4614-8bd1-9e8c29f0a0ea/stock",
     "method": "PUT",
     "sortNum": 30000,
     "created": "2023-02-23T05:08:21.586Z",
-    "modified": "2023-02-24T14:16:37.237Z",
+    "modified": "2023-03-06T02:23:23.501Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"stock\": \"21\"\n}",
+      "raw": "{\n  \"stock\": 21\n}",
       "form": []
     },
     "tests": []
@@ -51,11 +62,11 @@
     "colId": "e5f8b33a-a726-4e91-b7ee-2ddb7f82f7b5",
     "containerId": "9d29294a-ce68-4b0f-9311-d43150bafe35",
     "name": "Update Price",
-    "url": "/products/18fd8cdf-f828-4b38-8220-ab5c6436a295/price",
+    "url": "{{baseURL}}/products/18fd8cdf-f828-4b38-8220-ab5c6436a295/price",
     "method": "PUT",
     "sortNum": 40000,
     "created": "2023-02-23T05:09:24.453Z",
-    "modified": "2023-02-24T14:16:46.956Z",
+    "modified": "2023-03-05T07:15:32.075Z",
     "headers": [],
     "params": [],
     "body": {
@@ -70,11 +81,11 @@
     "colId": "e5f8b33a-a726-4e91-b7ee-2ddb7f82f7b5",
     "containerId": "9d29294a-ce68-4b0f-9311-d43150bafe35",
     "name": "Delete Product",
-    "url": "/products/18fd8cdf-f828-4b38-8220-ab5c6436a295",
+    "url": "{{baseURL}}/products/1f65a2c7-f7cd-4d51-b852-8601e246ffba",
     "method": "DELETE",
     "sortNum": 50000,
     "created": "2023-02-23T05:09:59.448Z",
-    "modified": "2023-02-24T14:17:00.761Z",
+    "modified": "2023-03-05T16:13:48.611Z",
     "headers": [],
     "params": [],
     "tests": []
@@ -84,11 +95,11 @@
     "colId": "e5f8b33a-a726-4e91-b7ee-2ddb7f82f7b5",
     "containerId": "9d29294a-ce68-4b0f-9311-d43150bafe35",
     "name": "Create Product",
-    "url": "/products",
+    "url": "{{baseURL}}/products",
     "method": "POST",
     "sortNum": 40000,
     "created": "2023-02-23T05:26:32.954Z",
-    "modified": "2023-02-24T14:16:53.097Z",
+    "modified": "2023-03-05T07:15:37.489Z",
     "headers": [],
     "params": [],
     "body": {

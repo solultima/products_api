@@ -1,7 +1,7 @@
 name: demo_apis
 services:
   database:
-    container_name: products_api_data
+    container_name: products-api-data
     image: mongo:latest
     restart: unless-stopped
     volumes:
@@ -13,7 +13,7 @@ services:
         ipv4_address: 172.18.0.2
 
   products_api:
-    container_name: products_api
+    container_name: products-api
     image: node:lts-alpine
     restart: unless-stopped
     depends_on:
@@ -22,15 +22,21 @@ services:
       - "$PWD:/app"
     working_dir: "/app"
     command: ["npm", "run", "dev"]
-    ports:
-      - 80:8080
     environment:
       - PORT=8080
+      - DATABASE_HOST=products-api-data
+      - DATABASE_PORT=27017
+      - DATABASE_NAME=products_api_data
     networks:
       default:
         ipv4_address: 172.18.0.3
+      proxy-network:
+        ipv4_address: 172.20.0.4
 
 networks:
   default:
     external: true
     name: teamwork
+  proxy-network:
+    external: true
+    name: proxy-network
