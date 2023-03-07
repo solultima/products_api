@@ -5,14 +5,17 @@ import { ProductDatabase } from '../database.mongo';
 
 const getListHandler = async (req: Request, res: Response) => {
   const { page = 1, size = 3 } = req.query;
-  const result = await ProductDatabase.getProducts(Number(page), Number(size));
+  const result = await ProductDatabase.getProducts(
+    typeof page === 'number' ? page : Number(page),
+    typeof size === 'number' ? size : Number(size)
+  );
 
   res.send({
-    pageNumber: page,
-    pageSize: size,
+    pageNumber: typeof page === 'number' ? page : Number(page),
+    pageSize: typeof size === 'number' ? size : Number(size),
     pageItemCount: result.data.length,
     totalItemCount: result.total,
-    items: result.data
+    items: result.data,
   });
 };
 
